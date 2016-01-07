@@ -1,0 +1,18 @@
+# Gradle
+.gradle
+build
+
+# Artifacts
+/checks.sh
+/fig.yml
+
+# IntelliJ IDEA
+.idea
+out
+*.iml
+*.ipr
+*.iws
+
+# Floobits
+.floo
+.flooignore

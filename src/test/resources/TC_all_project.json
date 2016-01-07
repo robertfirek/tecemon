@@ -1,0 +1,28 @@
+{
+  "count": 3,
+  "href": "/app/rest/projects",
+  "project": [
+    {
+      "id": "_Root",
+      "name": "<Root project>",
+      "description": "Contains all other projects",
+      "href": "/app/rest/projects/id:_Root",
+      "webUrl": "https://localhost/project.html?projectId=_Root"
+    },
+    {
+      "id": "Project",
+      "name": "Project",
+      "parentProjectId": "_Root",
+      "description": "First Level project",
+      "href": "/app/rest/projects/id:Project",
+      "webUrl": "https://localhost/project.html?projectId=Project"
+    },
+    {
+      "id": "Subproject",
+      "name": "Subproject",
+      "parentProjectId": "Project",
+      "href": "/app/rest/projects/id:Subproject",
+      "webUrl": "https://localhost/project.html?projectId=Subproject"
+    }
+  ]
+}

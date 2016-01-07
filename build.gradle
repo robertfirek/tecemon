@@ -1,0 +1,46 @@
+group 'me.crowdmix'
+version '0.1'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply from: 'versions.gradle'
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+repositories {
+    maven {
+        url "http://artifactory.dev.crwd.mx/artifactory/libs-release"
+        credentials {
+            username = "$System.env.ARTIFACTORY_REPOSITORY_USER_NAME"
+            password = "$System.env.ARTIFACTORY_REPOSITORY_USER_PASSWORD"
+        }
+    }
+}
+
+test {
+    include "tests/**/integration/*Should*"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: versions.junit
+    testCompile group: 'com.github.tomakehurst', name:'wiremock', version: versions.wiremock
+    testCompile group: 'org.mockito', name:'mockito-core', version: versions.'mockito-core'
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j2
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: versions.log4j2
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: versions.log4j2
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: versions.'fasterxml-jackson'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: versions.'fasterxml-jackson'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: versions.'fasterxml-jackson'
+
+    compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: versions.httpclient
+
+    compile group: 'com.google.guava', name: 'guava', version: versions.guava
+
+    compile group: 'com.jayway.jsonpath', name: 'json-path', version: versions.'json-path'
+}
+
+
+
+

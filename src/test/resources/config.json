@@ -1,0 +1,9 @@
+{
+  "TeamCity": {
+    "url": "http://teamcity.url",
+    "credentials": {
+      "user":"TestUser",
+      "password":"TestPassword"
+    }
+  }
+}
